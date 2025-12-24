@@ -1,31 +1,26 @@
 "use strict";
 const body = document.body;
 body.addEventListener('click', handleBodyClick, { once: true });
+
 function handleBodyClick() {
-    const body = document.body;
-    const projectMembers = body.querySelector('.projectMembers');
-    const initialPageBacking = body.querySelector('.initialPageBacking');
-    if (!projectMembers || !initialPageBacking) {
-        throw new Error("Missing elements: .projectMembers or .initialPageBacking");
-    }
+    const projectMembers = document.querySelector('.projectMembers');
+    const initialPageBacking = document.querySelector('.initialPageBacking');
     projectMembers.remove();
+
     const timerParagraph = document.createElement('p');
     timerParagraph.className = 'timerParagraph';
     initialPageBacking.appendChild(timerParagraph);
+
     let count = 3;
-    timerParagraph.textContent = String(count);
-    const countdownId = window.setInterval(() => {
+    timerParagraph.textContent = count;
+    const countdownId = setInterval(() => {
         count--;
         if (count <= 0) {
             clearInterval(countdownId);
-            timerParagraph.remove();
-        }
-        else {
-            timerParagraph.textContent = String(count);
+            initialPageBacking.remove();
+            if (typeof startGame === "function") startGame();
+        } else {
+            timerParagraph.textContent = count;
         }
     }, 1000);
-    window.setTimeout(() => {
-        initialPageBacking.remove();
-    }, 3500);
 }
-
