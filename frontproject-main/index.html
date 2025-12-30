@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Speedy Tiles Game</title>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Tektur&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="style.css">
+	<script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+	<script src="./script.js" defer></script>
+</head>
+
+<body>
+	<div class="initialPageBacking">
+		<div class="projectMembers">
+			<h1>Project Members</h1>
+			<ul class="membersList">
+				<li class="member">
+					<img src="./img/onur.jpg" width="90" class="image">
+					<div>
+						<h3>Onur Karcı</h3>
+						<p>Section 4</p>
+					</div>
+				</li>
+				<li class="member">
+					<img src="./img/kirill.jpg" width="90" class="image">
+					<div>
+						<h3>Kirill Shestov</h3>
+						<p>Section 4</p>
+					</div>
+				</li>
+				<li class="member">
+					<img src="./img/aykhan.jpg" width="90" class="image">
+					<div>
+						<h3>Aykhan Hashim-zada</h3>
+						<p>Section 4</p>
+					</div>
+				</li>
+			</ul>
+		</div>	
+	</div>
+
+	<div class="info">
+		<div id="hiscore">HI-SCORE<p id="hiscore-val">0</p>
+		</div>
+		<div id="score">SCORE<p id="score-val">0</p>
+		</div>
+		<div>TIME<div id="time">10</div>
+		</div>
+	</div>
+
+	<div class="container"></div>
+
+	<div class="pointbarcontainer">
+		<div id="pointbar"></div>
+	</div>
+
+	<div id="overlay" class="hidden">
+		<h1 id="status-message"></h1>
+		<p class="restart-text">Press F5 to play again</p>
+	</div>
+</body>
+
+</html>

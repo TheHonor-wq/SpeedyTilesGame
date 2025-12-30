@@ -1,0 +1,211 @@
+* {
+	margin: 0;
+	padding: 0;
+	font-family: "Tektur", sans-serif;
+	font-weight: 400;
+}
+
+body {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	min-height: 100vh;
+	background-color: #f0f0f0;
+}
+
+.initialPageBacking {
+	background: black;
+	width: 100%;
+	height: 100vh;
+	position: fixed;
+	z-index: 200;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	color: white;
+}
+
+.projectMembers {
+	background-color: gray;
+	padding: 10px;
+}
+
+.membersList {
+	list-style: none;
+}
+
+.member {
+	padding: 10px;
+	display: flex;
+	align-items: center;
+}
+
+.image {
+	padding-right: 10px;
+	border-radius: 100%;
+}
+
+.info {
+	display: flex;
+	justify-content: space-between;
+	width: 300px;
+	margin-bottom: 20px;
+	text-align: center;
+}
+
+.info > div {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	font-weight: bold;
+}
+
+.info p, .info #time {
+	font-size: 24px;
+	margin-top: 5px;
+}
+
+.timerParagraph {
+	font-size: 80px;
+	color: rebeccapurple;
+}
+
+.container {
+	position: relative;
+	height: 300px;
+	width: 300px;
+	border: 1px solid #ccc;
+	background: white;
+}
+
+.box {
+	height: 75px;
+	width: 75px;
+	border: 1px solid #eee;
+	background: white;
+	position: absolute;
+	transition: background-color 0.5s ease;
+	cursor: pointer;
+	text-align: center; line-height: 75px;
+}
+
+.container .box.black { background-color: black; }
+.container .box.green { background-color: #6FF527; }
+
+.pointbarcontainer {
+	width: 200px;
+	height: 15px;
+	background: blue;
+	margin: 20px auto;
+	position: relative;
+	overflow: hidden;
+
+}
+
+#pointbar {
+	width: 100%;
+	height: 100%;
+	background: #40E0D0;
+	transition: width 1s linear;
+}
+
+#overlay {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	width: 320px;
+	height: 320px;
+	background: rgba(255,255,255,0.95);
+	z-index: 100;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	border-radius: 15px;
+	box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+	animation: fadeIn 0.5s ease;
+}
+
+.pulse-animation {
+	animation: pulse 1.5s infinite alternate;
+	font-size: 48px;
+	text-align: center;
+	color: #ff6b6b;
+	text-shadow: 0 0 10px rgba(255, 107, 107, 0.5);
+}
+
+@keyframes pulse {
+	0% {
+		transform: scale(1);
+		opacity: 0.8;
+		text-shadow: 0 0 5px rgba(255, 107, 107, 0.3);
+	}
+	100% {
+		transform: scale(1.1);
+		opacity: 1;
+		text-shadow: 0 0 20px rgba(255, 107, 107, 0.8);
+	}
+}
+
+.highlight-update { animation: highlight 2s ease; }
+
+@keyframes highlight {
+	0% {
+		color: inherit;
+		transform: scale(1);
+	}
+	50% {
+		color: #ff6b6b;
+		transform: scale(1.2);
+	}
+	100% {
+		color: inherit;
+		transform: scale(1);
+	}
+}
+
+.restart-text {
+	animation: blink 1s infinite;
+	margin-top: 15px;
+	font-size: 18px;
+	color: #333;
+}
+
+@keyframes blink {
+	0%, 100% { opacity: 1; }
+	50% { opacity: 0; }
+}
+
+@keyframes fadeIn {
+	from { opacity: 0; transform: translate(-50%, -50%) scale(0.9); }
+	to { opacity: 1; transform: translate(-50%, -50%) scale(1); }
+}
+
+#overlay.hidden { display: none; }
+
+
+
+
+.tap-message {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 24px;
+    color: #333;
+    text-align: center;
+    background: rgba(255, 255, 255, 0.8);
+    padding: 15px 25px;
+    border-radius: 10px;
+    z-index: 10;
+    animation: fadeOut 2s forwards;
+    animation-delay: 1s;
+    pointer-events: none;
+}
+
+@keyframes fadeOut {
+    from { opacity: 1; }
+    to { opacity: 0; visibility: hidden; }
+}
